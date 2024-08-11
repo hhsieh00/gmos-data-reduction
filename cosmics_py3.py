@@ -250,11 +250,13 @@ class cosmicsimage:
                         goodcutout = cutout[cutout != np.Inf]
                         #print np.alen(goodcutout)
                         
-                        if np.alen(goodcutout) >= 25 :
+                        #if np.alen(goodcutout) >= 25 :
+                        if len(goodcutout) >= 25 :
                                 # This never happened, but you never know ...
                                 # raise RuntimeError, "Mega error in clean !"
                                 raise RuntimeError
-                        elif np.alen(goodcutout) > 0 :
+                        #elif np.alen(goodcutout) > 0 :
+                        elif len(goodcutout) > 0 :
                                 replacementvalue = np.median(goodcutout)
                         else :  
                                 # i.e. no good pixels : Shit, a huge cosmic, we will have to improvise ...
